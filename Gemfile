@@ -6,8 +6,6 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'rspec-rails'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,10 +19,34 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  # gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'sextant'
+  gem 'rails_db_info'
+  gem 'quiet_assets'
+  gem 'thin'
+end
+
+group :test do
+  # shoulda-matchers provides Rspec with one-liners that test common Rails functionality. These tests would otherwise be much longer, more complex, and error-prone. Read the docs: https://github.com/thoughtbot/shoulda-matchers
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  # A library for setting up Ruby objects as test data. Read the docs: https://github.com/thoughtbot/factory_girl_rails
+  gem 'factory_girl_rails'
+  # Capybara helps you test web applications by simulating how a real user would interact with your app. Read the docs: https://github.com/jnicklas/capybara
+  gem 'capybara'
+
+  # we will use this to clean our testing database after each run. Read the docs: https://github.com/bmabey/database_cleaner
+  gem 'database_cleaner'
+end
+
+gem 'faker'
 gem 'jquery-rails'
 
+
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
