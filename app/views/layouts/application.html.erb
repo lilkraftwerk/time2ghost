@@ -8,8 +8,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<img src="logo.png">
+  <div id="navbar">
+    <div id='imgcontainer'>
+    <%= image_tag('logo.png') %>
+    </div>
+    <div id="user-info">
+      <% if @current_user %>
+        <%= render "homepage/logged_in" %>
+      <% else %>
+       <%= render "homepage/login_signup" %>
+      <% end %>
+    </div>
+  </div>
 <%= yield %>
-
 </body>
 </html>
