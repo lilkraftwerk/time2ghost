@@ -24,7 +24,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'sextant'
   gem 'rails_db_info'
-  gem 'faker'
   gem 'quiet_assets'
   gem 'thin'
 end
@@ -42,7 +41,7 @@ group :test do
   gem 'database_cleaner'
 end
 
-
+gem 'faker'
 gem 'jquery-rails'
 
 
