@@ -4,7 +4,7 @@ class Google
     origin = origin.split(/[^\w-]+/).join("+")
     destination = destination.split(/[^\w-]+/).join("+")
     # Returns a json object
-    directions = HTTPary.get("https://maps.googleapis.com/maps/api/directions/json?origin=#{origin}&destination=#{destination}&sensor=false&mode=walking")
+    directions = HTTParty.get("https://maps.googleapis.com/maps/api/directions/json?origin=#{origin}&destination=#{destination}&sensor=false&mode=walking")
     return directions
   end
 
