@@ -1,28 +1,19 @@
-.container{
-  margin-top: 80px;
-  width:50%;
-  margin-left: 25%;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding:20px;
-}
-
-#navbar{
+.navbar{
   position:fixed;
   top: 0em;
   left: 0;
   width: 100%;
-  height: 75px;
-  background-color: pink;
-  border-bottom: 3px solid black;
-  background-image: url('pentagon.png');
+  height: 15%;
+  text-align: center;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  background-color:rgba(0,0,0,0.8);
+  z-index: 1;
+  box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 
-#imgcontainer {
-  width: 60%;
-}
 
-#navbar img {
+.navbar img {
   display:block;
   max-width: 75%;
   max-height: 75%;
@@ -35,7 +26,7 @@
     bottom: 0;
 }
 
-#navbar img:hover{
+.navbar img:hover{
   opacity: 0.5;
 }
 
