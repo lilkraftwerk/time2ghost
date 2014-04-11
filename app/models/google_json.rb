@@ -4,6 +4,10 @@ class GoogleJson
     return time
   end
 
+  def self.get_directions(json_object)
+
+  end
+
 
 
 end

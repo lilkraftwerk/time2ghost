@@ -8,6 +8,9 @@ class Google
     return directions
   end
 
+  def self.get_location
+
+  end
 
 end
 
