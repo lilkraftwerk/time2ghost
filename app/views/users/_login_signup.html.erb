@@ -1,0 +1,7 @@
+<%= form_for :user do |f| %>
+  Username: <%= f.text_field :username %><br />
+  Password : <%= f.text_field :password %><br />
+  <%= f.submit "Log In" %>
+<% end %>
+
+<%= link_to "Sign Up", new_user_path %>
