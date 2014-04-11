@@ -4,14 +4,14 @@ class GoogleMaps
   def self.http_get_directions(origin, destination)
     url = self.assemble_directions_request(origin, destination)
 
-    HTTParty.get(url)
+    HTTParty.get(url).parsed_response
   end
 
   def self.get_total_walking_time(json_object)
     json_object["routes"][0]["legs"][0]["duration"]["text"]
   end
 
-  def self.get_directions(json_object)
+  def self.parse_directions(json_object)
     directions = []
     json_object["routes"][0]["legs"][0]["steps"].each do |step|
       directions << step["html_instructions"]
