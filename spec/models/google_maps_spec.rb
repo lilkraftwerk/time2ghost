@@ -10,7 +10,7 @@ require 'spec_helper'
     end
 
 
-    it "returns correct walking directions array" do
+    it "returns correct parsed walking directions array" do
       directions = GoogleMaps.parse_directions(stubbed_response)
       expected = ["Head <b>south</b> on <b>Grant Ave</b> toward <b>Vinton Ct</b>", "Turn <b>left</b> onto <b>Post St</b>", "Turn <b>right</b> onto <b>Montgomery St</b>", "Turn <b>left</b> onto <b>Market St</b>"]
       expect(directions).to eq(expected)
