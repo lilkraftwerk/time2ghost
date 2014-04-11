@@ -1,0 +1,10 @@
+<!--
+
+<%= form_for @post, url: {action: "create"} do |f| %>
+  Title: <br><%= f.text_field :title %><br>
+  Price: <br><%= f.text_field :price %><br>
+  Email: <br><%= f.text_field :email %><br>
+  Description: <br><%= f.text_field :description %><br>
+  Category: <br><%= collection_select(:post, :category_id, @categories, :id, :name) %>
+  <%= f.submit 'Submit'%>
+<% end %> -->
