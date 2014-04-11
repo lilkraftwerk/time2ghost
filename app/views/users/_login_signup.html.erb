@@ -1,0 +1,11 @@
+
+  <div id="user_info">
+    <%= form_for :user do |f| %>
+      Username: <%= f.text_field :username, placeholder: "username" %><br />
+      Password : <%= f.text_field :password, placeholder: "password" %><br />
+      <%= f.submit "Log In" %>
+    <% end %>
+
+    <%= link_to "Sign Up", new_user_path %>
+
+  </div>
