@@ -1,4 +1,4 @@
 *.yml
 *.log
 db/schema.rb
-tmp/*
+tmp/
