@@ -10,6 +10,13 @@ describe UsersController do
     end
   end
 
+  context "#new" do
+    it "makes empty user for new user form" do
+      get :new
+      expect(assigns(:user).attributes).to eq(User.new.attributes)
+    end
+  end
+
   context "#create" do
     it "creates a new user" do
       expect {
