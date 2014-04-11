@@ -165,6 +165,7 @@ DEPENDENCIES
   faker
   httparty
   jquery-rails
+  nokogiri
   pg
   quiet_assets
   rails (= 3.2.13)

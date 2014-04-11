@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'httparty'
+gem 'nokogiri'
+gem 'open-uri'
 
 # Gems used only for assets and not required
 # in production environments by default.
