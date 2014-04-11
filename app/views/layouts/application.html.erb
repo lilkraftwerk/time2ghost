@@ -2,23 +2,22 @@
 <html>
 <head>
   <title>Time2ghost</title>
-  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='css/medium.css' />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="navbar">
-    <div id='imgcontainer'>
-    <%= image_tag('logo.png') %>
-    </div>
-    <div id="user-info">
-      <% if @current_user %>
-        <%= render "users/logged_in" %>
-      <% else %>
-       <%= render "users/login_signup" %>
-      <% end %>
-    </div>
+  <div class="navbar">
+    <!-- <div id='imgcontainer'> -->
+<!--     <%= image_tag('logo.png') %> -->
+      <h1>time 2 ghost</h1>
+    <!-- </div> -->
+
+
+
   </div>
 <%= yield %>
 </body>

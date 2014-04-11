@@ -1,3 +1,17 @@
-<div class="container">
-  Welcome to Time 2 Ghost. Never be late again.
+<div class="content">
+
+      <p>
+          time2go. Never Be Late Again.  time2go. Never Be Late Again.
+      </p>
+
+      <div id="user-info">
+        <% if @current_user %>
+          <%= render "users/logged_in" %>
+        <% else %>
+         <%= render "users/login_signup" %>
+        <% end %>
+      </div>
+
+
+
 </div>
