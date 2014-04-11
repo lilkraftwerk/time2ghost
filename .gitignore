@@ -2,8 +2,5 @@
 *.log
 db/schema.rb
 tmp/
-tmp/*
 log/*.log
-tmp/**/*
-tmp/*/*
 
