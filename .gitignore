@@ -1,6 +1,5 @@
 *.yml
 *.log
 db/schema.rb
-tmp/
-log/*.log
+tmp/*
 
