@@ -21,7 +21,7 @@ class Trip < ActiveRecord::Base
   def find_closest_station(user_lat, user_long)
     stations = Station.all
     closest_bart_distance = stations.first.distance_to(user_lat, user_long)
-    closest_station = Station.all.first
+    closest_station = stations.first
     stations.each do |station|
       station_distance = station.distance_to(user_lat, user_long)
       if station_distance < closest_bart_distance
