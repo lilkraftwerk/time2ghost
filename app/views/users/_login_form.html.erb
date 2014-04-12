@@ -1,0 +1,12 @@
+
+<div class="notice">
+  <% if flash[:error] %>
+    <p class="error"><%= flash[:error]  %></p>
+  <% end %>
+</div>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+  Username1234: <%= f.text_field :username, placeholder: "username" %><br />
+  Password : <%= f.text_field :password, placeholder: "password" %><br />
+  <%= f.submit "Log In" %>
+<% end %>
