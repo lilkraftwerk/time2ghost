@@ -11,4 +11,13 @@ class TwilioModel
     :body => "Leave now to catch #{bart_line} train from #{station} at#{depart_time}. It's a #{walking_time} minute walk. <3, time2ghost"
 )
   end
+
+  def self.text_test
+    @client = @client = Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILIO_AUTH'])
+    @client.account.messages.create(
+    :from => '+14155211220',
+    :to => "+18184212905",
+    :body => "hi it's #{Time.now}"
+)
+  end
 end

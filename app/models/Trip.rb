@@ -17,12 +17,14 @@ class Trip < ActiveRecord::Base
     suggested_leave_time_in_minutes_from_now = minutes_until_departure - walking_time - 5
 
     set_recommended_leave_time(suggested_leave_time_in_minutes_from_now)
-    p self
+
     self.save!
   end
 
-  def send_text
-
+  def self.get_trips_for_current_minute
+    @trips = Trip.where("recommended_leave_time = ?", Time.now.change(:sec => 0))
+    puts Time.now.change(:sec => 0)
+    @trips.each {|trip| TwilioModel.send_text(trip)}
   end
 
   private
