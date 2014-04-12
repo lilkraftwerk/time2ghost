@@ -35,6 +35,6 @@ class Bart
     correct_destination = path.xpath("//abbreviation[contains(text(), '#{endpoint}')]").first.parent()
     arrival_times = []
     correct_destination.search('minutes').each {|x| arrival_times << x.text}
-    arrival_times
+    arrival_times << endpoint
   end
 end
