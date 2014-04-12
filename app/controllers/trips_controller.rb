@@ -9,11 +9,8 @@ class TripsController < ApplicationController
   end
 
   def create
-    current_location = params[:trip].delete(:current_location)
     @trip = Trip.new(params[:trip])
     @trip.calculate_bart_gmap(current_location)
-    # @trip.calculate_gmaps_and_bart(current_location, )
-
     if @trip.save
       redirect_to @trip
     else
