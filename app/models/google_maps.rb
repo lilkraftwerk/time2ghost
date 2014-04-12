@@ -7,13 +7,13 @@ class GoogleMaps
     HTTParty.get(url).parsed_response
   end
 
-  def self.get_total_walking_time(json_object)
-    json_object["routes"][0]["legs"][0]["duration"]["value"] / 60
+  def self.get_total_walking_time(gmaps_returned_json)
+    gmaps_returned_json["routes"][0]["legs"][0]["duration"]["value"] / 60
   end
 
-  def self.parse_directions(json_object)
+  def self.parse_directions(gmaps_returned_json)
     directions = []
-    json_object["routes"][0]["legs"][0]["steps"].each do |step|
+    gmaps_returned_json["routes"][0]["legs"][0]["steps"].each do |step|
       directions << step["html_instructions"]
     end
 
