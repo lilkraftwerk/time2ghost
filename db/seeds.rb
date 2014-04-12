@@ -18,3 +18,6 @@ parsed_stations.each do |station|
     Station.create(station_params)
 
 end
+
+u = User.create(username: "Lucas", password: "testtest", phone_number: "8184212905", email: "lucas@lucas.com")
+Trip.create(user_id: u.id, departure_station: "24TH", destination_station: "PITT")
