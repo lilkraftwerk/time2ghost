@@ -8,7 +8,7 @@ class GoogleMaps
   end
 
   def self.get_total_walking_time(json_object)
-    json_object["routes"][0]["legs"][0]["duration"]["text"]
+    json_object["routes"][0]["legs"][0]["duration"]["value"] / 60
   end
 
   def self.parse_directions(json_object)
