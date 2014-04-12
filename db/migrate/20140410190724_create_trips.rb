@@ -7,7 +7,7 @@ class CreateTrips < ActiveRecord::Migration
       t.integer :walking_time
       t.text :directions
       t.time :train_departing_time
-      t.time :time_to_leave
+      t.time :recommended_leave_time
       t.string :bart_line
       t.timestamps
     end
