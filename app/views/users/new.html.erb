@@ -1,0 +1,33 @@
+<div class="content">
+
+  <div class="notice">
+    <% if flash[:errors] %>
+      <p class="errors"><%= flash[:errors]  %></p>
+    <% end %>
+  </div>
+
+  <%= form_for @user do |f| %>
+    <%= f.label :username %>:
+    <%= f.text_field :username %><br />
+
+    <%= f.label :password %>:
+    <%= f.text_field :password %><br />
+
+    <%= f.label :phone_number %>:
+    <%= f.text_field :phone_number %><br />
+
+    <%= f.label :email %>:
+    <%= f.text_field :email %><br />
+
+    <%= f.submit %>
+  <% end %>
+
+
+</div>
+
+
+<!-- t.string   "username"
+t.string   "password_digest"
+t.string   "walk_speed",      :default => "normal"
+t.string   "phone_number"
+t.string   "email" -->
