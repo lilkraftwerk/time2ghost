@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
   validates :phone_number, presence: true
   validates :email, presence: true
   validates :password, length: { in: 6..50 }
+  has_many :trips
 end
