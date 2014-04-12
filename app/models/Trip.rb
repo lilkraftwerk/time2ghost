@@ -18,6 +18,21 @@ class Trip < ActiveRecord::Base
     set_recommended_leave_time(suggested_leave_time_in_minutes_from_now)
   end
 
+  def find_closest_station(user_lat, user_long)
+    stations = Station.all
+    closest_bart_distance = stations.first.distance_to(user_lat, user_long)
+    closest_station = stations.first
+    stations.each do |station|
+      station_distance = station.distance_to(user_lat, user_long)
+      if station_distance < closest_bart_distance
+        closest_bart_distance = station_distance
+        closest_station = station
+      end
+    end
+
+    closest_station
+  end
+
   private
   def set_recommended_leave_time(suggested_leave_time_in_minutes_from_now)
     self.recommended_leave_time = Time.now + suggested_leave_time_in_minutes_from_now.minutes
