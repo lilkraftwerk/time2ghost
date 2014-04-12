@@ -4,15 +4,15 @@
 # http://en.wikipedia.org/wiki/Cron
 
 # Example:
-#
-set :output, "../log/cron_log.log"
-#
-set :environment, "development"
 
-every 1.minute do
-  # runner "Trip.get_trips_for_current_minute"
-  runner "TwilioModel.text_test"
-end
+
+#
+# set :output, "../log/cron_log.log"
+#
+# every 1.minute do
+  # runner "TwilioModel.text_test"
+  # rake "texting:test"
+# end
 #
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"

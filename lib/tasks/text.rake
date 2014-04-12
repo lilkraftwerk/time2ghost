@@ -8,7 +8,7 @@
     end
 
     desc "Send all texts for the given minute"
-    task :send => environment do
+    task :send => :environment do
       Trip.get_trips_for_current_minute
     end
   end
