@@ -10,6 +10,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(params[:trip])
+    @trip.calculate_bart_gmap(current_location)
     if @trip.save
       redirect_to @trip
     else
