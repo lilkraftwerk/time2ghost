@@ -23,8 +23,6 @@ class Trip < ActiveRecord::Base
 
   def self.get_trips_for_current_minute
     @trips = Trip.where("recommended_leave_time = ?", Time.now.change(:sec => 0))
-    puts Time.now.change(:sec => 0)
-    @trips.each {|trip| TwilioModel.send_text(trip)}
   end
 
   def find_closest_station(user_lat, user_long)
