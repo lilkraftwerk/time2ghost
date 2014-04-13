@@ -1,5 +1,7 @@
 class TwilioModel
   def self.send_text(trip_object)
+    puts trip_object
+    puts "trip obj above"
   @client = @client = Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILIO_AUTH'])
   bart_line = trip_object.bart_line
   station = Station.find_by_abbr(trip_object.departure_station).name
@@ -12,8 +14,10 @@ class TwilioModel
 )
   end
 
-  def send_all_texts_for_now
+  def self.send_all_texts_for_now
     trips = Trip.get_trips_for_current_minute
+    puts trips
+    puts "putting trips above"
     trips.each {|trip| TwilioModel.send_text(trip)}
   end
 
