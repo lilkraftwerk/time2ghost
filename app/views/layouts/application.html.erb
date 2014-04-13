@@ -12,7 +12,10 @@
 </head>
 <body>
   <div class="navbar">
+    <%= link_to root_path do%>
       <h1>time 2 ghost</h1>
+      <%end%>
+      <%= render "sessions/logout"%>
   </div>
 <%= yield %>
 </body>
