@@ -1,6 +1,6 @@
 html{
   font-family: 'Open Sans', sans-serif;
-  background: url("ghostback.jpg") center center fixed;
+  background: url("shattered.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,29 +12,29 @@ html{
   display: inline-block;
   width:50%;
   padding:20px;
-  border: 1px dotted black;
+  border: 2px solid black;
   border-radius: 20px;
-  background-color:rgba(0,0,0,0.8);
+  background-color: #ACE1C7;
   top: 22%;
 /*  right: 15%;
   left: 17%;*/
   margin-left: 10%;
   width: 75%;
-  color: white;
+  color: black;
   font-size: 1.4em;
   text-align: center;
 
 }
 
 
-.tripform input {
+.content input {
   padding: 10px;
   font-size: 26px;
   margin: 30px 0px;
   display: inline-block;
 }
 
-  .tripform select {
+  .content select {
     height: 300px;
     width: 100%; max-height: 50px;
     border: 0px solid pink;
@@ -43,12 +43,12 @@ html{
 
   }
 
-.tripform submit {
+.content submit {
   font-size: 3em;
 }
 
 
-.tripform input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+.content input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
 cursor:pointer;
 -webkit-border-radius: 5px;
 border-radius: 5px;
