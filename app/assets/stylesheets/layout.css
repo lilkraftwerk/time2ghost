@@ -21,10 +21,42 @@ html{
   margin-left: 10%;
   width: 75%;
   color: white;
+  font-size: 1.4em;
   text-align: center;
-  text-shadow: 0px 3px 0px black,
-               0px 14px 10px rgba(0,0,0,1),
-               0px 24px 2px rgba(0,0,0,0.2),
-               0px 34px 30px rgba(0,0,0,0.5);
 
 }
+
+
+.tripform input {
+  padding: 10px;
+  font-size: 26px;
+  margin: 30px 0px;
+  display: inline-block;
+}
+
+  .tripform select {
+    height: 300px;
+    width: 100%; max-height: 50px;
+    border: 0px solid pink;
+    font-size: 1em;
+    margin: 30px 0px;
+
+  }
+
+.tripform submit {
+  font-size: 3em;
+}
+
+
+.tripform input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+margin: 0px auto;
+text-align: center }
+
+  .tripform {
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+  }

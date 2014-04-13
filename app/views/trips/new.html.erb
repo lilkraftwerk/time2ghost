@@ -1,17 +1,17 @@
 <div class="content">
-
+<div class="tripform">
   <%= form_for Trip.new do |f| %>
-
     <%= f.label :current_location %>:
-    <%= f.text_field :current_location %><br />
-
+    <br>
+    <%= f.text_field :current_location %>
+<br>
     <%= f.label :departure_station %>
     <%= f.collection_select(:departure_station, Station.all, :abbr, :name) %>
-    <br>
-
+<br>
     <%= f.label :destination_station %>
     <%= f.collection_select(:destination_station, Station.all, :abbr, :name) %>
     <%= f.submit %>
   <% end %>
 
+</div>
 </div>
