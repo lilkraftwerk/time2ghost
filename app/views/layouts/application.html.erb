@@ -4,7 +4,7 @@
   <title>Time2ghost</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
-  <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='assets/stylesheets/media.css' />
+<!--   <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='/media.css' /> -->
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -12,7 +12,10 @@
 </head>
 <body>
   <div class="navbar">
+    <%= link_to root_path do%>
       <h1>time 2 ghost</h1>
+      <%end%>
+      <%= render "sessions/logout"%>
   </div>
 <%= yield %>
 </body>

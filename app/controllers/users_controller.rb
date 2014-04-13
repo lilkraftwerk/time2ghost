@@ -9,13 +9,21 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to @user
+    user = User.create params[:user]
+    # @user = User.new
+    # @user.username = params[:user][:username]
+    # @user.password = params[:user][:password]
+    # @user.password_confirmation = params[:user][:password]
+    if user.valid?
+      session[:user_id] = user.id
+      flash[:create] = "Account Created Successfully"
+      redirect_to root_path
     else
-      flash[:error] = "Signup error."
+      flash[:error] = "Account not created. Please try again."
       render :new
     end
   end
+
+
+
 end
