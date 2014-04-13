@@ -2,6 +2,6 @@ class TextWorker
   include Sidekiq::Worker
 
   def perform
-    puts "hi there"
+    TwilioModel.send_all_texts_for_now
   end
 end
