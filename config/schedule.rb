@@ -8,11 +8,11 @@
 
 #
 # set :output, "../log/cron_log.log"
-#
-# every 1.minute do
+
+every 1.minute do
   # runner "TwilioModel.text_test"
-  # rake "texting:test"
-# end
+  rake "texting:test"
+end
 #
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
