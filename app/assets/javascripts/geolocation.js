@@ -3,6 +3,7 @@ form_addres = document.querySelectorAll('.demo')
 function getLocation(){
   if ("geolocation" in navigator){
     navigator.geolocation.getCurrentPosition(onSuccess, showError){
+
     })
   }
   else {
@@ -40,3 +41,4 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 // getLocation()
+
