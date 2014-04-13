@@ -1,6 +1,5 @@
 Time2ghost::Application.routes.draw do
-  root :to => 'homepage#index', :constraints => true
-  # p session[:user_id]
+  root :to => 'homepage#index'
   resources :trips
   resources :users
   resources :sessions, :only => [:create, :destroy]
