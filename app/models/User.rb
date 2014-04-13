@@ -6,3 +6,4 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :password, length: { in: 6..50 }
   has_many :trips
+end

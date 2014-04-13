@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
+  include SessionHelper
+
   def show
-    @user = User.find(params[:id])
+    @user = correct_user
+    redirect_to '/profile'
+  end
+
+  def profile
+    @user = correct_user
     render :show
   end
 
@@ -10,10 +17,6 @@ class UsersController < ApplicationController
 
   def create
     user = User.create params[:user]
-    # @user = User.new
-    # @user.username = params[:user][:username]
-    # @user.password = params[:user][:password]
-    # @user.password_confirmation = params[:user][:password]
     if user.valid?
       session[:user_id] = user.id
       flash[:create] = "Account Created Successfully"
