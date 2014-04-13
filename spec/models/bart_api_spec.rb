@@ -16,7 +16,7 @@ describe Bart do
 
   context "#parse_realtime_departure_xml" do
     it "returns realtime departure data" do
-      expect(Bart.parse_realtime_departure_xml(REALTIME_XML, "DALY")).to eq(["11", "14", "25"])
+      expect(Bart.parse_realtime_departure_xml(REALTIME_XML, "DALY")).to eq(["11", "14", "25", "DALY"])
     end
   end
 end

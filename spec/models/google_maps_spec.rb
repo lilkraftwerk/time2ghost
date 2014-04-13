@@ -6,7 +6,7 @@ require 'spec_helper'
 
     it "returns correct walking time" do
       walking_time = GoogleMaps.get_total_walking_time(stubbed_response)
-      expect(walking_time).to eq("9 mins")
+      expect(walking_time).to eq(9)
     end
 
 
