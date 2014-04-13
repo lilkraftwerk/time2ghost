@@ -12,7 +12,7 @@ class TwilioModel
 )
   end
 
-  def send_all_texts_for_now
+  def self.send_all_texts_for_now
     trips = Trip.get_trips_for_current_minute
     trips.each {|trip| TwilioModel.send_text(trip)}
   end

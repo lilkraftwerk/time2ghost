@@ -6,7 +6,8 @@ gem 'pg'
 gem 'twilio-ruby'
 gem 'httparty'
 gem 'nokogiri'
-gem 'whenever', :require => false
+gem 'sidekiq'
+gem 'clockwork'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

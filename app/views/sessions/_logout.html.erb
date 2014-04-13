@@ -2,4 +2,5 @@
 <div class="logout">
       <%= button_to "Log Out", {:controller => :sessions, :action => "destroy", :id => session[:user_id]}, {:method => :delete} %>
 </div>
-<%end%>
+<% end
+%>

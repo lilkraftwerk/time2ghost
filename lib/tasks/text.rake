@@ -11,4 +11,9 @@
     task :send => :environment do
       Trip.get_trips_for_current_minute
     end
+
+    desc "puts something"
+    task :print => :environment do
+      puts "im putting something"
+    end
   end
