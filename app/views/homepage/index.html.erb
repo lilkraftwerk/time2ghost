@@ -1,12 +1,7 @@
 <div class="content">
-      <p>
-          time2go. Never Be Late Again.  time2go. Never Be Late Again.
-      </p>
-      <div id="user-info">
-        <% if @current_user %>
-          <%= render "users/logged_in" %>
-        <% else %>
-         <%= render "users/login_signup" %>
-        <% end %>
-      </div>
+  <% if logged_in? %>
+    <%= render "trip_form"%>
+  <% else %>
+    <%= render "landing_page"%>
+  <% end%>
 </div>
