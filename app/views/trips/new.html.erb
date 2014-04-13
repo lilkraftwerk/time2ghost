@@ -1,4 +1,4 @@
-<div class="trip_form">
+<div class="content">
 
   <%= form_for Trip.new do |f| %>
 
@@ -6,10 +6,11 @@
     <%= f.text_field :current_location %><br />
 
     <%= f.label :departure_station %>
-    <%= f.collection_select(:user_id, Station.all, :id, :name) %>
+    <%= f.collection_select(:departure_station, Station.all, :abbr, :name) %>
+    <br>
 
     <%= f.label :destination_station %>
-    <%= f.collection_select(:user_id, Station.all, :id, :name) %>
+    <%= f.collection_select(:destination_station, Station.all, :abbr, :name) %>
     <%= f.submit %>
   <% end %>
 

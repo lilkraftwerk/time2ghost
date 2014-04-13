@@ -1,0 +1,9 @@
+<div class="content">
+departure station: <%= @trip.departure_station %><br>
+destination station: <%= @trip.destination_station %><br>
+current location: <%= @trip.current_location %><br>
+time now is: <%= Time.now %><br>
+train leaves at <%= @trip.train_departing_time %><br>
+walking time in <%= @trip.walking_time %> minutes <br>
+you should leave at <%= @trip.recommended_leave_time %><br>
+</div>
