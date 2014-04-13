@@ -1,9 +1,10 @@
 <div class="content">
-
+  <%= button_tag "Find Me", id: "geolocateButton", remote: true%>
   <%= form_for Trip.new do |f| %>
 
     <%= f.label :current_location %>:
-    <%= f.text_field :current_location %><br />
+    <%= f.text_field :current_location %>
+    <br>
 
     <%= f.label :departure_station %>
     <%= f.collection_select(:departure_station, Station.all, :abbr, :name) %>
