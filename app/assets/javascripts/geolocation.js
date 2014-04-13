@@ -2,19 +2,16 @@ form_addres = document.querySelectorAll('.demo')
 
 function getLocation(){
   if ("geolocation" in navigator){
-    navigator.geolocation.getCurrentPosition(onSuccess, showError){
-
-    })
+    navigator.geolocation.getCurrentPosition(onSuccess, showError)
   }
   else {
-    // User is going to have to input location themselves
     alert('Geolocation is not supported in your browser.')
   }
 }
 
 function onSuccess(position){
-  alert("Your lat, long: " + position.coords.latitude + ", " + position.coords.longitude)
-
+  var coords = position.coords.latitude + "," + position.coords.longitude;
+  $("#trip_current_location").val(coords);
 }
 
 function showError(error) {
@@ -34,11 +31,11 @@ function showError(error) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function(){
+$(document).ready(function(){
 
-
+  $('#geolocateButton').on('click', function(){
+      getLocation();
+  })
 
 })
-
-// getLocation()
 
