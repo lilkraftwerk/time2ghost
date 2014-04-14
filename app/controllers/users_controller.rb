@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    params[:user][:phone_number].gsub!(/[^0-9]/, "")
     user = User.create params[:user]
     if user.valid?
       session[:user_id] = user.id
