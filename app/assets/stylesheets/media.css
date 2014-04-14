@@ -20,7 +20,7 @@
     width: 300px;
     top: 20%;
     right: ;
-    left: 25%;
+    left: 2%;
     margin-left: 0em;
 
   }
@@ -50,13 +50,18 @@
 
 @media (max-width: 450px){
   .content{
-    width: 150px;
+    width: 200px;
     top: 20%;
     right: ;
-    left: 4em;
+    left: 2em;
     margin-left: 0em;
   }
 
+  form { width: 100%;
+      margin: 0 auto;
+      margin-left: -10px; }
+  form textarea,
+  form input { width: 100%; }
 }
 
 
