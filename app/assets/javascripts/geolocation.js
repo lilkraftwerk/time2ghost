@@ -1,69 +1,62 @@
-var geoLoc = (function() {
+var Geolocate = function() {
+  var binder = new Geolocate.Binder();
+  binder.bind();
+};
 
-  var init = function() {
-    var binder = new Binder();
-    binder.bind();
-  };
+Geolocate.Binder = function() {
+  this.controller = new Geolocate.Controller();
+}
 
-  var Binder = function() {};
+Geolocate.Binder.prototype = {
 
-  Binder.prototype = {
-    bind: function() {
-      var controller = new Controller();
-      this.bindGeolocate(controller);
-    },
+  bind: function() {
+    this.bindGeolocate(this.controller);
+  },
 
-    bindGeolocate: function(controller) {
-      $('#geolocateButton').on('click', function(){
-        controller.getLocation();
-      });
+  bindGeolocate: function(controller) {
+    $('#geolocateButton').on('click', function(){
+      controller.getLocation();
+    });
+  }
+};
+
+Geolocate.Controller = function() {}
+
+Geolocate.Controller.prototype = {
+  getLocation: function(){
+    if ("geolocation" in navigator){
+      navigator.geolocation.getCurrentPosition(this.onSuccess, this.showError);
+    }
+    else {
+      alert('Geolocation is not supported in your browser.');
+    }
+  },
+
+  onSuccess: function(position){
+    var coords = position.coords.latitude + "," + position.coords.longitude;
+    $("#trip_current_location").val(coords);
+    $("#geolocateButton").html("Found you :)");
+  },
+
+  showError: function(error) {
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        alert("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        alert("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERROR:
+        alert("An unknown error occurred.");
+        break;
     }
   }
-
-  var Controller = function() {};
-
-  Controller.prototype = {
-    getLocation: function(){
-      if ("geolocation" in navigator){
-        navigator.geolocation.getCurrentPosition(this.onSuccess, this.showError);
-      }
-      else {
-        alert('Geolocation is not supported in your browser.');
-      }
-    },
-
-    onSuccess: function(position){
-      var coords = position.coords.latitude + "," + position.coords.longitude;
-      $("#trip_current_location").val(coords);
-    },
-
-    showError: function(error) {
-      switch(error.code) {
-        case error.PERMISSION_DENIED:
-          alert("User denied the request for Geolocation.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          alert("Location information is unavailable.");
-          break;
-        case error.TIMEOUT:
-          alert("The request to get user location timed out.");
-          break;
-        case error.UNKNOWN_ERROR:
-          alert("An unknown error occurred.");
-          break;
-      }
-    }
-  };
-
-  return {
-    init: init
-  }
-
-})();
+};
 
 $(document).ready(function(){
-  geoLoc.init();
-
-
-})
+  geoloc = new Geolocate();
+});
 

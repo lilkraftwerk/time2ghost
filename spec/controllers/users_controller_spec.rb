@@ -6,7 +6,7 @@ describe UsersController do
   context "#show" do
     it "renders show page" do
       get :show, test_user.attributes
-      expect(response).to render_template(:show)
+      expect(response).to redirect_to(:profile)
     end
   end
 
