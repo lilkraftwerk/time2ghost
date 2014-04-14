@@ -2,31 +2,29 @@
 /*#204987 #A3C8E5 #E9F7F7 #ACE1C7 #428C67*/
 
 html{
-  font-family: 'Open Sans', sans-serif;
-  background: url("shattered.png");
+  font-family: 'Lato', sans-serif;
+  /*background: url("shattered.png");*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: #E9F7F7;
 }
 
 .content{
+  background: url('redox.png');
+  background-size: 100px 100px;
   position: absolute;
   display: inline-block;
   width:50%;
   padding:20px;
-  border: 2px solid black;
-  border-radius: 20px;
   background-color: #ACE1C7;
   top: 22%;
-/*  right: 15%;
-  left: 17%;*/
   margin-left: 10%;
   width: 75%;
   color: black;
   font-size: 1.4em;
   text-align: center;
-
 }
 
 
@@ -73,6 +71,8 @@ text-align: center
     border: 2px solid black;
  }
 
+
+
   .tripform {
     width: 80%;
     margin-left: 10%;
@@ -102,4 +102,37 @@ text-align: center
   background-color: #E9F7F7;
   text-decoration: underline;
   border-radius: 10px;
+}
+
+
+#profile {
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+}
+
+
+#profile .userinfo {
+  background-color: #204987;
+  color: white;
+  padding: 20px;
+  margin-top: 10px;
+  width: 75%;
+  margin: 0px auto;
+  margin-bottom: 10px;
+  margin-top: 3px;
+  text-align: center;
+}
+
+#profile hr{
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+#profile a {
+  text-decoration: none;
+  color: white;
 }

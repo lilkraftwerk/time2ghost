@@ -25,6 +25,29 @@ class Trip < ActiveRecord::Base
     @trips = Trip.where("recommended_leave_time = ?", Time.now.change(:sec => 0))
   end
 
+  def format_fake_trip(minutes_until_ghosting)
+    format_fake_trip_walking_time
+    format_fake_trip_minutes(minutes_until_ghosting)
+  end
+
+
+  def format_fake_trip_walking_time
+    depart_station_obj = get_station(self.departure_station)
+    walk_time = get_walking_time_to_station(self.current_location, depart_station_obj.gmap_destination_string)
+    self.update_attributes(:walking_time => walk_time)
+    self.save
+  end
+
+  def format_fake_trip_minutes(minutes_until_ghosting)
+    self.update_attributes(:recommended_leave_time => (Time.now + minutes_until_ghosting.to_i.minutes).change(:sec => 0))
+    fake_depart_time = (Time.now + minutes_until_ghosting.to_i.minutes + self.walking_time.to_i.minutes + 5.minutes).change(:sec => 0)
+    puts fake_depart_time
+    puts "holler"
+    self.update_attributes(:train_departing_time => fake_depart_time)
+  end
+
+
+
   def find_closest_station(user_lat, user_long)
     stations = Station.all
     closest_bart_distance = stations.first.distance_to(user_lat, user_long)
@@ -40,6 +63,8 @@ class Trip < ActiveRecord::Base
   end
 
   private
+
+
   def set_recommended_leave_time(suggested_leave_time_in_minutes_from_now)
     self.recommended_leave_time = remove_seconds_from_time(Time.now + suggested_leave_time_in_minutes_from_now.minutes)
   end
@@ -70,5 +95,4 @@ class Trip < ActiveRecord::Base
     gmaps_json = GoogleMaps.http_get_directions(origin, destination)
     GoogleMaps.get_total_walking_time(gmaps_json)
   end
-
 end

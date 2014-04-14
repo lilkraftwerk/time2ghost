@@ -24,6 +24,21 @@ class TripsController < ApplicationController
     end
   end
 
+  def new_fake
+    @trip = Trip.new
+  end
+
+  def create_fake
+    @trip = Trip.new(params[:trip])
+    if @trip.save
+      correct_user.trips << @trip
+      @trip.format_fake_trip(params[:time2go])
+      redirect_to trip_path(@trip)
+    else
+      flash[:error] = "Trip creation error"
+      render :new
+    end
+  end
    private
 
    def require_login
@@ -32,5 +47,4 @@ class TripsController < ApplicationController
        redirect_to root_path # halts request cycle
      end
    end
-
 end
