@@ -1,4 +1,6 @@
 class TripsController < ApplicationController
+include SessionHelper
+
   def show
     @trip = Trip.find(params[:id])
     render :show
@@ -11,6 +13,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(params[:trip])
     if @trip.save
+      correct_user.trips << @trip
       @trip.update_departure_time
       redirect_to trip_path(@trip)
     else

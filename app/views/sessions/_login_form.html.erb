@@ -8,5 +8,10 @@
 <%= form_for(:session, url: sessions_path) do |f| %>
   Username: <%= f.text_field :username, placeholder: "username", autofocus: true %><br />
   Password : <%= f.text_field :password, placeholder: "password" %><br />
+
   <%= f.submit "Log In" %>
 <% end %>
+<br>
+or
+<div class="signup-button">
+<%= link_to raw("<button> sign up for new account</button>"), new_user_path %></div>
