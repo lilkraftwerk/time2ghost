@@ -35,6 +35,7 @@ Geolocate.Controller.prototype = {
   onSuccess: function(position){
     var coords = position.coords.latitude + "," + position.coords.longitude;
     $("#trip_current_location").val(coords);
+    $("#geolocateButton").html("Found you :)");
   },
 
   showError: function(error) {
