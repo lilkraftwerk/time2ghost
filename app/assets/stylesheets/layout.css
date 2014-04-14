@@ -1,3 +1,6 @@
+/*color pallette*/
+/*#204987 #A3C8E5 #E9F7F7 #ACE1C7 #428C67*/
+
 html{
   font-family: 'Open Sans', sans-serif;
   background: url("shattered.png");
@@ -75,3 +78,16 @@ text-align: center
     margin-left: 10%;
     text-align: center;
   }
+
+
+#show-trip {
+  width: 60%;
+  margin: 0px auto;
+  font-size: 1.5em;
+}
+
+#show-trip span {
+  background-color: #E9F7F7;
+  text-decoration: underline;
+  border-radius: 10px;
+}
