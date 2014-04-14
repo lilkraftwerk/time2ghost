@@ -7,7 +7,7 @@
 
 <%= form_for(:session, url: sessions_path) do |f| %>
   Username: <%= f.text_field :username, placeholder: "username", autofocus: true %><br />
-  Password : <%= f.text_field :password, placeholder: "password" %><br />
+  Password : <%= f.password_field :password, placeholder: "password" %><br />
 
   <%= f.submit "Log In" %>
 <% end %>
