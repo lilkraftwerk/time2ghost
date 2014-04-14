@@ -14,7 +14,7 @@ include SessionHelper
   def create
     @trip = Trip.new(params[:trip])
     if @trip.save
-      @user = correct_user.trips << @trip
+      correct_user.trips << @trip
       @trip.update_departure_time
       redirect_to trip_path(@trip)
     else
