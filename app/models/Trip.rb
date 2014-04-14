@@ -36,7 +36,6 @@ class Trip < ActiveRecord::Base
         closest_station = station
       end
     end
-
     closest_station
   end
 
