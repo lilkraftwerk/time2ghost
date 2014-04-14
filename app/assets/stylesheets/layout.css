@@ -79,6 +79,18 @@ text-align: center
     text-align: center;
   }
 
+.signup-button {
+  width: 30%;
+  margin-left: 35%;
+}
+
+.list-no-decoration{
+  list-style-type: none;
+}
+
+.list-no-decoration li {
+  margin-bottom: 10px;
+}
 
 #show-trip {
   width: 60%;
