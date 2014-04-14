@@ -1,7 +1,6 @@
 class TripsController < ApplicationController
 include SessionHelper
 
-
   def show
     @trip = Trip.find(params[:id])
     render :show
