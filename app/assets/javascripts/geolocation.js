@@ -43,7 +43,7 @@ Geolocate.Controller.prototype = {
       url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coords + "&sensor=false&key=AIzaSyBxh8vE1E5HfT5-TYUMWKcuR-ojA77G65U"
     }).done(function(response){
       var address = response.results[0].formatted_address
-      $("#geolocateButton").html("Found you and closest departure station :)");
+      $("#geolocateButton").html("Found you and the closest departure station.");
       $("#bart_trip_current_location").val(address);
       var bStations = new BartStations();
       bStations.getClosestBart(position.coords.latitude, position.coords.longitude);
