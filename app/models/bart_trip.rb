@@ -35,8 +35,7 @@ class BartTrip < ActiveRecord::Base
   end
 
   def set_recommended_leave_time
-    p self.recommended_leave_time = remove_seconds_from_time((Time.now + @minutes_until_next_possible_train.minutes) - 5.minutes - self.walking_time.minutes)
-
+    self.recommended_leave_time = remove_seconds_from_time((Time.now + @minutes_until_next_possible_train.minutes) - 5.minutes - self.walking_time.minutes)
   end
 
 
@@ -50,25 +49,17 @@ class BartTrip < ActiveRecord::Base
     BartTrip.where("recommended_leave_time = ?", Time.now.change(:sec => 0))
   end
 
+  def format_fake_trip(minutes_until_ghosting)
+    @minutes_until_ghosting = minutes_until_ghosting.minutes
+    set_walking_time
+    format_fake_trip_minutes(minutes_until_ghosting)
+  end
 
-
-  # def format_fake_trip(minutes_until_ghosting)
-  #   @minutes_until_ghosting = minutes_until_ghosting.minutes
-  #   set_walking_time
-  #   format_fake_trip_minutes(minutes_until_ghosting)
-  # end
-
-  # def format_fake_trip_minutes
-  #   fake_depart_time = remove_seconds_from_time(Time.now + @minutes_until_ghosting + number_to_minutes(self.walking_time) + 5.minutes)
-  #   self.update_attributes(:recommended_leave_time => remove_seconds_from_time(Time.now + @minutes_until_ghosting))
-  #   self.update_attributes(:train_departing_time => fake_depart_time)
-  # end
-
-
-
-
-
-
+  def format_fake_trip_minutes
+    fake_depart_time = remove_seconds_from_time(Time.now + @minutes_until_ghosting + number_to_minutes(self.walking_time) + 5.minutes)
+    self.update_attributes(:recommended_leave_time => remove_seconds_from_time(Time.now + @minutes_until_ghosting))
+    self.update_attributes(:train_departing_time => fake_depart_time)
+  end
 
   def get_walking_time_to_station(origin, destination)
     gmaps_json = GoogleMaps.http_get_directions(origin, destination)
