@@ -12,4 +12,5 @@ class Station < ActiveRecord::Base
     lat_difference + long_difference
   end
 
+
 end
