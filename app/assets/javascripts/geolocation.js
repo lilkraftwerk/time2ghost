@@ -143,4 +143,3 @@ $(document).ready(function(){
   bartloc = new BartStations();
   bartloc.bind();
 });
-
