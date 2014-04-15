@@ -1,7 +1,8 @@
-class Trip < ActiveRecord::Base
+class BartTrip < ActiveRecord::Base
   attr_accessible :user_id, :departure_station, :destination_station, :walking_time, :directions,
   :train_departing_time, :bart_line, :recommended_leave_time, :current_location
   belongs_to :user
+
 
   def update_departure_time
     depart_station_obj = get_station(self.departure_station)
@@ -21,15 +22,18 @@ class Trip < ActiveRecord::Base
     self.save!
   end
 
-  def self.get_trips_for_current_minute
-    @trips = Trip.where("recommended_leave_time = ?", Time.now.change(:sec => 0))
+  def format_trip_message
+    "test formatting for trip message. leave in #{self.recommended_leave_time}"
+  end
+
+  def get_trips_for_current_minute
+    BartTrip.where("recommended_leave_time = ?", Time.now.change(:sec => 0))
   end
 
   def format_fake_trip(minutes_until_ghosting)
     format_fake_trip_walking_time
     format_fake_trip_minutes(minutes_until_ghosting)
   end
-
 
   def format_fake_trip_walking_time
     depart_station_obj = get_station(self.departure_station)
@@ -41,11 +45,8 @@ class Trip < ActiveRecord::Base
   def format_fake_trip_minutes(minutes_until_ghosting)
     self.update_attributes(:recommended_leave_time => (Time.now + minutes_until_ghosting.to_i.minutes).change(:sec => 0))
     fake_depart_time = (Time.now + minutes_until_ghosting.to_i.minutes + self.walking_time.to_i.minutes + 5.minutes).change(:sec => 0)
-    puts fake_depart_time
-    puts "holler"
     self.update_attributes(:train_departing_time => fake_depart_time)
   end
-
 
 
   def find_closest_station(user_lat, user_long)
@@ -62,7 +63,7 @@ class Trip < ActiveRecord::Base
     closest_station
   end
 
-  private
+  # private
 
 
   def set_recommended_leave_time(suggested_leave_time_in_minutes_from_now)
@@ -70,7 +71,8 @@ class Trip < ActiveRecord::Base
   end
 
   def get_depart_times_and_line
-    depart_times = Bart.get_departures(self.departure_station, self.destination_station)
+    bart_departures = RealtimeBartDepartures.new(self.departure_station, self.destination_station)
+    depart_times = bart_departures.get_departures
     self.bart_line = get_station(depart_times.pop).name
     depart_times
   end
