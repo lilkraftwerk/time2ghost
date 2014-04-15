@@ -1,7 +1,4 @@
-var Geolocate = function() {
-  var binder = new Geolocate.Binder();
-  binder.bind();
-};
+var Geolocate = function() {};
 
 Geolocate.Binder = function() {
   this.controller = new Geolocate.Controller();
@@ -11,10 +8,13 @@ Geolocate.Binder.prototype = {
 
   bind: function() {
     this.bindGeolocate(this.controller);
+
   },
 
   bindGeolocate: function(controller) {
     $('#geolocateButton').on('click', function(){
+      $(this).prop("disabled", true);
+      $(this).html("Locating you...");
       controller.getLocation();
     });
   }
@@ -76,7 +76,6 @@ BartStations.prototype = {
 
   bind: function() {
     $("#closestBartButton").on("click", function() {
-      // console.log("wut")
       var latLongJson = BartStations.prototype.getUserLatLong();
       console.log(latLongJson)
     });
@@ -93,9 +92,6 @@ BartStations.prototype = {
   },
 
   getUserLatLong: function() {
-    // Ajax to grab value from field
-
-
     var address = $('#trip_current_location').val()
     $.ajax({
       type: 'GET',
@@ -103,7 +99,6 @@ BartStations.prototype = {
     }).done(function(response){
       return response.results[0].geometry.location
     })
-    // https://maps.googleapis.com/maps/api/geocode/json?address=
   },
 
   algorithmFindClosest: function(stations, userLatitude, userLongitude){
@@ -143,7 +138,8 @@ BartStations.prototype = {
 
 
 $(document).ready(function(){
-  geoloc = new Geolocate();
+  var geobinder = new Geolocate.Binder();
+  geobinder.bind();
   bartloc = new BartStations();
   bartloc.bind();
 });
