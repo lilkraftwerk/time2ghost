@@ -1,12 +1,12 @@
 <div class="content">
 
   <div id="profile">
-hey there,<div class="userinfo"><%= @user.username %>.</div>
-      <%= render "my_trips", :user => @user %>
-<hr>
-      email<br>
+      Hello<div class="userinfo"><%= @user.username %></div>
+      <%= render "my_trips", :user => @user %><br>
+      email:<br>
       <div class="userinfo"><%= @user.email %></div>
       phone:<br><div class="userinfo"><%= @user.format_phone_number %></div>
-      walkin' speed:<br> <div class="userinfo"><%= @user.walk_speed %></div>
+      walking speed:<br> <div class="userinfo"><%= @user.walk_speed %></div><br>
+     <%= link_to "Edit", edit_user_path(@user), :method => "get", :class => "homepage-button", :id => "link" %>
 </div>
 </div>
