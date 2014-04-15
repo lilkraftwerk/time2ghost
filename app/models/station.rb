@@ -11,5 +11,4 @@ class Station < ActiveRecord::Base
     long_difference = (user_long - self.longitude.to_f).abs
     lat_difference + long_difference
   end
-
 end
