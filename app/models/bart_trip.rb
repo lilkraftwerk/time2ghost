@@ -24,17 +24,21 @@ class BartTrip < ActiveRecord::Base
   end
 
   def get_minutes_until_train_departs # magic number 5 = get to the station 5 minutes early!
+    puts @realtime_departures
     @first_possible_departure = @realtime_departures.find { |depart_time| (depart_time.first.to_i - self.walking_time - 5) > 0 }
+    if @first_possible_departure.nil?
+      @first_possible_departure = @realtime_departures.last
+    end
     set_bart_line
     set_minutes_until_next_train
   end
 
   def set_minutes_until_next_train
-    @minutes_until_next_possible_train = first_possible_departure.first
+    @minutes_until_next_possible_train = @first_possible_departure.first if @first_possible_departure
   end
 
   def set_bart_line
-    self.bart_line = Station.find_by_abbr(first_possible_departure.pop).name
+    self.bart_line = Station.find_by_abbr(@first_possible_departure.pop).name if @first_possible_departure
   end
 
   def set_train_departing_time
