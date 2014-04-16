@@ -15,7 +15,7 @@ html{
 }
 
 .content{
-  background: url('whitediamond_@2X.png');
+  background: url('whitediamond.png');
   background-size: 100px 100px;
   position: absolute;
   display: inline-block;
@@ -31,7 +31,7 @@ html{
 }
 
 .container{
-  background: url('binding_light_@2X.png');
+  background: url('binding_light.png');
   background-size: 100px 100px;
   position: absolute;
   display: inline-block;
