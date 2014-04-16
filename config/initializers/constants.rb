@@ -1,0 +1,3 @@
+# constants
+
+ADDITIONAL_MINUTES_FOR_TRIP = 5

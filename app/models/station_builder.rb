@@ -1,4 +1,4 @@
-class StationBuilder
+ class StationBuilder
   require 'open-uri'
 
   def initialize(bart_api_stations_url)
@@ -21,9 +21,6 @@ class StationBuilder
       :zipcode => station.search('zipcode')[0].text }
       Station.create(station_params)
     end
-
   end
-
-
 end
 

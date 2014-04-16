@@ -25,7 +25,7 @@ class BartTrip < ActiveRecord::Base
 
   def get_minutes_until_train_departs # magic number 5 = get to the station 5 minutes early!
     puts @realtime_departures
-    @first_possible_departure = @realtime_departures.find { |depart_time| (depart_time.first.to_i - self.walking_time - 5) > 0 }
+    @first_possible_departure = @realtime_departures.find { |depart_time| (depart_time.first.to_i - self.walking_time - ADDITIONAL_MINUTES_FOR_TRIP) > 0 }
     if @first_possible_departure.nil?
       @first_possible_departure = @realtime_departures.last
     end
@@ -46,7 +46,7 @@ class BartTrip < ActiveRecord::Base
   end
 
   def set_recommended_leave_time
-    self.recommended_leave_time = remove_seconds_from_time((Time.now + @minutes_until_next_possible_train.minutes) - 5.minutes - self.walking_time.minutes)
+    self.recommended_leave_time = remove_seconds_from_time((Time.now + @minutes_until_next_possible_train.minutes) - ADDITIONAL_MINUTES_FOR_TRIP.minutes - self.walking_time.minutes)
   end
 
   def trip_message
@@ -65,7 +65,7 @@ class BartTrip < ActiveRecord::Base
   end
 
   def format_fake_trip_minutes
-    fake_depart_time = remove_seconds_from_time(Time.now + @minutes_until_ghosting + number_to_minutes(self.walking_time) + 5.minutes)
+    fake_depart_time = remove_seconds_from_time(Time.now + @minutes_until_ghosting + number_to_minutes(self.walking_time) + ADDITIONAL_MINUTES_FOR_TRIP.minutes)
     self.update_attributes(:recommended_leave_time => remove_seconds_from_time(Time.now + @minutes_until_ghosting))
     self.update_attributes(:train_departing_time => fake_depart_time)
   end

@@ -1,4 +1,4 @@
-class RealtimeBartDepartures
+ class RealtimeBartDepartures
   require 'open-uri'
   attr_accessor :endpoint_and_departure_times
 
