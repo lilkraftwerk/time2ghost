@@ -14,6 +14,8 @@
     @endpoints_and_departure_times = get_upcoming_realtime_departures
   end
 
+  private
+
   def get_route_names
     route_xml = get_route_xml_from_bart_api
     @route_numbers = BartXMLParser.get_route_numbers_from_xml(route_xml)

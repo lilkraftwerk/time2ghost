@@ -21,11 +21,6 @@ describe BartTrip do
     end
   end
 
-  context "#get_station" do
-    it "correctly gets a station" do
-      expect(@trip.get_station("24TH")).to be_a(Station)
-    end
-  end
 
   context "#get_minutes_until_train_departs" do
     it "successfully gets potential departure times" do
@@ -45,9 +40,8 @@ describe BartTrip do
 
   context "#get_trips_for_current_minute" do
     it "finds accurate trips for current minute" do
-
     BartTrip.create(:recommended_leave_time => Time.now.change(:sec => 0))
-    expect(@trip.get_trips_for_current_minute.length).to eq(1)
+    expect(BartTrip.get_trips_for_current_minute.length).to eq(1)
     end
   end
 end

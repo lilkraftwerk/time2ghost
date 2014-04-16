@@ -13,6 +13,12 @@ class BartTrip < ActiveRecord::Base
     self.save!
   end
 
+  def get_walking_time_to_station(origin, destination)
+    gmaps = GoogleMaps.new
+    gmaps.http_get_directions(origin, destination)
+    gmaps.get_total_walking_time
+  end
+
   def set_walking_time
     station_coordinates = Station.find_by_abbr(self.departure_station).gmap_destination_string
     self.walking_time = get_walking_time_to_station(current_location, station_coordinates)
@@ -23,7 +29,7 @@ class BartTrip < ActiveRecord::Base
     @realtime_departures
   end
 
-  def get_minutes_until_train_departs # magic number 5 = get to the station 5 minutes early!
+  def get_minutes_until_train_departs
     puts @realtime_departures
     @first_possible_departure = @realtime_departures.find { |depart_time| (depart_time.first.to_i - self.walking_time - ADDITIONAL_MINUTES_FOR_TRIP) > 0 }
     if @first_possible_departure.nil?
@@ -70,9 +76,5 @@ class BartTrip < ActiveRecord::Base
     self.update_attributes(:train_departing_time => fake_depart_time)
   end
 
-  def get_walking_time_to_station(origin, destination)
-    gmaps = GoogleMaps.new
-    gmaps.http_get_directions(origin, destination)
-    gmaps.get_total_walking_time
-  end
+
 end
