@@ -14,8 +14,9 @@ class BartTrip < ActiveRecord::Base
   end
 
   def valid?
-
-    return false unless self.current_location != nil
+    return false unless !self.current_location.blank?
+    return false unless !self.departure_station.blank?
+    return false unless !self.destination_station.blank?
     return false unless self.departure_station != self.destination_station
 
     true
