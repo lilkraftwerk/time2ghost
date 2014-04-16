@@ -24,17 +24,21 @@ class BartTrip < ActiveRecord::Base
   end
 
   def get_minutes_until_train_departs # magic number 5 = get to the station 5 minutes early!
+    puts @realtime_departures
     @first_possible_departure = @realtime_departures.find { |depart_time| (depart_time.first.to_i - self.walking_time - 5) > 0 }
+    if @first_possible_departure.nil?
+      @first_possible_departure = @realtime_departures.last
+    end
     set_bart_line
     set_minutes_until_next_train
   end
 
   def set_minutes_until_next_train
-    @minutes_until_next_possible_train = first_possible_departure.first
+    @minutes_until_next_possible_train = @first_possible_departure.first if @first_possible_departure
   end
 
   def set_bart_line
-    self.bart_line = Station.find_by_abbr(first_possible_departure.pop).name
+    self.bart_line = Station.find_by_abbr(@first_possible_departure.pop).name if @first_possible_departure
   end
 
   def set_train_departing_time
@@ -45,12 +49,12 @@ class BartTrip < ActiveRecord::Base
     self.recommended_leave_time = remove_seconds_from_time((Time.now + @minutes_until_next_possible_train.minutes) - 5.minutes - self.walking_time.minutes)
   end
 
-  def format_trip_message
+  def trip_message
     "Leave now to catch the #{format_time(self.train_departing_time)} #{self.bart_line} train " +
-    "from #{self.departure_station} to #{self.destination_station}. It's a #{self.walking_time} minute walk. <3, time2ghost"
+    "from #{Station.find_by_abbr(self.departure_station).name} to #{Station.find_by_abbr(self.destination_station).name}. It's a #{self.walking_time} minute walk. <3, time2ghost"
   end
 
-  def get_trips_for_current_minute
+  def self.get_trips_for_current_minute
     BartTrip.where("recommended_leave_time = ?", Time.now.change(:sec => 0))
   end
 
