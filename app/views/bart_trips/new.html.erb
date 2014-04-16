@@ -2,7 +2,13 @@
   <div class="tripform">
     <%= link_to "Find Me", "#", remote: true, id: 'geolocateButton', :class => "homepage-button" %><br>
     <%= form_for @bart_trip do |f| %>
-    <%= f.label :current_location %>:
+<div class="tripform">
+  <%= link_to "Find Me", "#", id: 'geolocateButton', :class => "homepage-button" %><br>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+  <%= form_for BartTrip.new do |f| %>
+g    <%= f.label :current_location %>:
     <br>
     <%= f.text_field :current_location, autofocus: true, placeholder: "Find Me!"%>
     <br>

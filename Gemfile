@@ -11,6 +11,7 @@ gem 'sidekiq'
 gem 'clockwork'
 gem 'jasmine-rails'
 gem 'figaro'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -25,7 +26,6 @@ group :development do
   gem 'sextant'
   gem 'rails_db_info'
   gem 'quiet_assets'
-  gem 'thin'
 end
 
 group :test do

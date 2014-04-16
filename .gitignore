@@ -1,8 +1,8 @@
-*.yml
 *.log
 db/schema.rb
 tmp/*
-coverage/
+coverage/*
 *.env
 # Ignore application configuration
-/config/application.yml
+config/application.yml
+config/database.yml

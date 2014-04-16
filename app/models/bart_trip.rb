@@ -13,10 +13,20 @@ class BartTrip < ActiveRecord::Base
     self.save!
   end
 
+<<<<<<< HEAD
   def get_walking_time_to_station(origin, destination)
     gmaps = GoogleMaps.new
     gmaps.http_get_directions(origin, destination)
     gmaps.get_total_walking_time
+=======
+  def valid?
+    return false unless !self.current_location.blank?
+    return false unless !self.departure_station.blank?
+    return false unless !self.destination_station.blank?
+    return false unless self.departure_station != self.destination_station
+
+    true
+>>>>>>> master
   end
 
   def set_walking_time
