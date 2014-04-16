@@ -74,13 +74,6 @@ var BartStations = function() {};
 
 BartStations.prototype = {
 
-  bind: function() {
-    $("#closestBartButton").on("click", function() {
-      var latLongJson = BartStations.prototype.getUserLatLong();
-      console.log(latLongJson)
-    });
-  },
-
   getClosestBart: function(userLatitude, userLongitude){
     $.ajax({
       type: 'GET',
@@ -140,6 +133,4 @@ BartStations.prototype = {
 $(document).ready(function(){
   var geobinder = new Geolocate.Binder();
   geobinder.bind();
-  bartloc = new BartStations();
-  bartloc.bind();
 });
