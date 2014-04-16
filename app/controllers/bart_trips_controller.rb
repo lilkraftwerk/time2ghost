@@ -14,13 +14,13 @@ class BartTripsController < ApplicationController
 
   def create
     @bart_trip = BartTrip.new(params[:bart_trip])
-    if @bart_trip.save
+    if @bart_trip.valid? && @bart_trip.save
       current_user.bart_trips << @bart_trip
       @bart_trip.update_departure_time
       redirect_to bart_trip_path(@bart_trip)
     else
       flash[:error] = "Trip creation error"
-      render :new
+      redirect_to new_bart_trip_path
     end
   end
 

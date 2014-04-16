@@ -55,11 +55,11 @@ describe BartTrip do
     end
   end
 
-  context "#get_trips_for_current_minute" do
-    it "finds accurate trips for current minute" do
+  # context "#get_trips_for_current_minute" do
+  #   it "finds accurate trips for current minute" do
 
-    BartTrip.create(:recommended_leave_time => Time.now.change(:sec => 0))
-    expect(@trip.get_trips_for_current_minute.length).to eq(1)
-    end
-  end
+  #   BartTrip.create(:recommended_leave_time => Time.now.change(:sec => 0))
+  #   expect(@trip.get_trips_for_current_minute.length).to eq(1)
+  #   end
+  # end
 end
