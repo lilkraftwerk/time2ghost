@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BartTripsController do
+describe UsersController do
   let!(:test_user){FactoryGirl.create(:user)}
 
   context "#show" do
