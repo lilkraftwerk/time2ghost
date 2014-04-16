@@ -19,7 +19,7 @@ class BartTrip < ActiveRecord::Base
     gmaps.get_total_walking_time
   end
 
-  def valid?
+  def is_valid?
     return false unless !self.current_location.blank?
     return false unless !self.departure_station.blank?
     return false unless !self.destination_station.blank?
