@@ -4,4 +4,4 @@ require 'clockwork'
 
 include Clockwork
 
-every(1.minute, "Checking for texts to send #{Time.now} test") { TwilioModel.text_test }
+every(1.minute, "Checking for texts to send #{Time.now} test") { TwilioMessage.send_all_texts_for_now}

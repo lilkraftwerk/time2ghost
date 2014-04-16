@@ -9,6 +9,7 @@ gem 'nokogiri'
 gem 'sidekiq'
 gem 'clockwork'
 gem 'jasmine-rails'
+gem 'figaro'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
