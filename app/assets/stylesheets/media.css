@@ -1,5 +1,11 @@
 @media (max-width: 2000px) {
 
+  img.feature-pic{
+    width: 400px;
+    height: auto;
+    margin-left: -125px;
+  }
+
   .container{
     left: 10%;
     padding-bottom: 40px;
@@ -21,10 +27,14 @@
    font-size: 65px;
   }
 
+  .login-links p{
+    font-size: 80px;
+  }
+
   .navbar h1{
   /*font-family: 'Lato', serif;*/
   /*font-family: 'Balthazar', serif;*/
-  font-family: 'Poiret One', cursive;
+  font-family: 'Poiret One', serif;
   font-size: 100px;
   margin-top: 25px;
   }
@@ -34,7 +44,7 @@
   }
 
   .section1 h1{
-    font-size: 70px;
+    font-size: 100px;
   }
 
 
@@ -103,6 +113,13 @@
   left: 40px;
   }
 
+  img.feature-pic{
+    width: 400px;
+    height: auto;
+    margin-left: -90px;
+  }
+
+
  .container{
     width: 500px;
     top: 20%;
@@ -134,7 +151,8 @@
   .section{
     margin-right: -10px;
     height: 200px;
-    max-width: 100%;
+    /*max-width: 100%;*/
+    width: 300px;
   }
 
   .section h1{
@@ -142,14 +160,22 @@
       padding-right: 15px;
     }
 
-  .section p{
+  .section1 h1{
+  font-size: 50px;
+  padding-right: 15px;
+  margin-left: 35px;
+}
+
+  .section1 p{
       font-size: 1em;
       padding-right: 15px;
+      margin-left: 40px;
     }
 
   .section1{
     padding-left: 20px;
-    width: 325px;
+    width: 315px;
+    background-color: white;
   }
 
   .section1 img {
@@ -157,7 +183,7 @@
   }
 
   .section2{
-    width: 310px;
+    width: 300px;
   }
 
 
