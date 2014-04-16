@@ -54,6 +54,9 @@
     width: 100px;
     margin-left: -35px;
   }
+  .section h1{
+      font-size: 1em;
+    }
 
 }
 
