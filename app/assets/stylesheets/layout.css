@@ -167,6 +167,8 @@ form input[type=submit]{
   margin-bottom: 10px;
   margin-top: 3px;
   text-align: center;
+  font-size: 35px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #profile hr{
