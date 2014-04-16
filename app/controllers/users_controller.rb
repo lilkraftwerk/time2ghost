@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Account not created. Please try again."
-      render :new
+      redirect_to new_user_path
     end
   end
 
