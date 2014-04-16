@@ -20,7 +20,8 @@ class GoogleMaps
       :origin => origin,
       :destination => destination,
       :sensor => false,
-      :mode => "walking"
+      :mode => "walking",
+      :key => "AIzaSyBxh8vE1E5HfT5-TYUMWKcuR-ojA77G65U"
     }
 
     "https://maps.googleapis.com/maps/api/directions/json?" + URI.encode_www_form(params)
