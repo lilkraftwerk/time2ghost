@@ -8,7 +8,7 @@
     <%= content_tag :div, msg, class: name %>
   <% end -%>
   <%= form_for BartTrip.new do |f| %>
-g    <%= f.label :current_location %>:
+   <%= f.label :current_location %>:
     <br>
     <%= f.text_field :current_location, autofocus: true, placeholder: "Find Me!"%>
     <br>
