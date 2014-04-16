@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '3.2.13'
 
 gem 'pg'
@@ -9,6 +10,7 @@ gem 'nokogiri'
 gem 'sidekiq'
 gem 'clockwork'
 gem 'jasmine-rails'
+gem 'figaro'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -35,8 +37,12 @@ group :test do
   gem 'database_cleaner'
 end
 
+gem 'rails_12factor', group: :production
+
 gem 'faker'
 gem 'jquery-rails'
 
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+ruby '1.9.3'
