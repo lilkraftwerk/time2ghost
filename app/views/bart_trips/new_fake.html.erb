@@ -1,26 +1,21 @@
 <div class="container">
-<div class="tripform">
-    <%= link_to "Find Me", "#", remote: true, id: 'geolocateButton', :class => "homepage-button" %>
-  <%= form_for @bart_trip, :url => url_for(:controller => 'bart_trips', :action => 'create_fake') do |f| %>
-    <%= f.label :current_location %>:
-    <br>
-    <%= f.text_field :current_location, autofocus: true, placeholder: "Find Me!"%>
-    <br>
-
-    <%= label_tag(:time2go, "Get me outta here in") %>:
-    <br>
-    <%= text_field_tag(:time2go) %> minutes
-    <br>
-
-    <%= f.label :departure_station %>
-    <%= f.collection_select(:departure_station, Station.all, :abbr, :name) %>
-<br>
-    <%= f.label :destination_station %>
-    <%= f.collection_select(:destination_station, Station.all, :abbr, :name) %>
-    <%= f.submit "GO", :class => "homepage-button"  %>
-  <% end %>
-
-
-</div>
-</div>
-
+    <div class="tripform">
+        <%= link_to "Find Me", "#", remote: true, id: 'geolocateButton', :class => "homepage-button" %>
+        <%= form_for @bart_trip, :url => url_for(:controller => 'bart_trips', :action => 'create_fake') do |f| %>
+        <%= f.label :current_location %>:
+        <br>
+        <%= f.text_field :current_location, autofocus: true, placeholder: "Find Me!"%>
+        <br>
+        <%= label_tag(:time2go, "Get me outta here in") %>:
+        <br>
+        <%= text_field_tag(:time2go) %> minutes
+        <br>
+        <%= f.label :departure_station %>
+        <%= f.collection_select(:departure_station, Station.all, :abbr, :name) %>
+        <br>
+        <%= f.label :destination_station %>
+        <%= f.collection_select(:destination_station, Station.all, :abbr, :name) %>
+        <%= f.submit "GO", :class => "homepage-button"  %>
+        <% end %>
+    </div>
+</div>g

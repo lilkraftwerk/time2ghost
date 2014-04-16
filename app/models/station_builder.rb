@@ -21,9 +21,6 @@ class StationBuilder
       :zipcode => station.search('zipcode')[0].text }
       Station.create(station_params)
     end
-
   end
-
-
 end
 

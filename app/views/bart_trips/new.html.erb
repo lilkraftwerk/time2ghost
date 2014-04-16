@@ -1,23 +1,20 @@
 <div class="container">
-<div class="tripform">
-  <%= link_to "Find Me", "#", id: 'geolocateButton', :class => "homepage-button" %><br>
-  <% flash.each do |name, msg| -%>
+  <div class="tripform">
+    <%= link_to "Find Me", "#", id: 'geolocateButton', :class => "homepage-button" %><br>
+    <% flash.each do |name, msg| -%>
     <%= content_tag :div, msg, class: name %>
-  <% end -%>
-  <%= form_for BartTrip.new do |f| %>
+    <% end -%>
+    <%= form_for BartTrip.new do |f| %>
     <%= f.label :current_location %>:
     <br>
     <%= f.text_field :current_location, autofocus: true, placeholder: "Find Me!"%>
     <br>
-
     <%= f.label :departure_station %>:
-    <%= f.collection_select(:departure_station, Station.all, :abbr, :name, :include_blank => true) %>
-<br>
+    <%= f.collection_select(:departure_station, @stations, :abbr, :name, :include_blank => true) %>
+    <br>
     <%= f.label :destination_station %>:
-    <%= f.collection_select(:destination_station, Station.all, :abbr, :name, :include_blank => true) %>
+    <%= f.collection_select(:destination_station, @stations, :abbr, :name, :include_blank => true) %>
     <%= f.submit "GO", :class => "homepage-button" %>
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
-</div>
-

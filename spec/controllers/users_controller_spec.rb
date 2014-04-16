@@ -4,7 +4,7 @@ describe UsersController do
   let!(:test_user){FactoryGirl.create(:user)}
 
   context "#show" do
-    xit "renders show page" do
+    it "renders show page" do
       get :show, test_user.attributes
       expect(response).to redirect_to(:profile)
     end

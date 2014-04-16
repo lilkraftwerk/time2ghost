@@ -12,6 +12,11 @@ module ApplicationHelper
     number.to_i.minutes
   end
 
+  def format_time_and_date(date_time)
+    date_time.strftime("%l:%M %P on %B %d,")
+  end
+
+
   def format_time(time)
     time.strftime("%l:%M %P")
   end
