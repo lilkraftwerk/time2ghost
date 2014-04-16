@@ -5,11 +5,14 @@ class BartTripsController < ApplicationController
 
   def show
     @bart_trip = BartTrip.find(params[:id])
+    @departure_station = Station.find_by_abbr(@bart_trip.departure_station).name
+    @destination_station = Station.find_by_abbr(@bart_trip.destination_station).name
     render :show
   end
 
   def new
     @bart_trip = BartTrip.new
+    @stations = Station.all
   end
 
   def create

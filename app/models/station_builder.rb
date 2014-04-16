@@ -1,4 +1,4 @@
- class StationBuilder
+class StationBuilder
   require 'open-uri'
 
   def initialize(bart_api_stations_url)
