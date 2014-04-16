@@ -4,11 +4,17 @@
     <p class="error"><%= flash[:error]  %></p>
   <% end %>
 </div>
-<div class="signup-button">
 
-<%= link_to "Log In", new_session_path, :method => "get", :class => "homepage-button", :id => "link-homepage" %></div>
-<br>
 
-<div class="signup-button">
+<div class="login-links">
+  <div class="welcome-buttons">
+    <div class="signup-button">
+      <%= link_to "Log In", new_session_path, :method => "get", :class => "homepage-button", :id => "link-homepage" %>
+    </div>
+    <br>
 
-<%= link_to "Sign Up", new_user_path, :method => "get", :class => "homepage-button", :id => "link-homepage" %></div>
+    <div class="signup-button">
+      <%= link_to "Sign Up", new_user_path, :method => "get", :class => "homepage-button", :id => "link-homepage" %>
+    </div>
+  </div>
+</div>
