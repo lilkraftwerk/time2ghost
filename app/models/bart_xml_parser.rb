@@ -2,7 +2,8 @@ class BartXMLParser
   def self.get_route_numbers_from_xml(route_xml)
     Nokogiri::XML(route_xml).xpath('//leg').each_with_object([]) do |leg, new_array|
       new_array << leg.attributes["line"].value.gsub!('ROUTE ', '')
-    end.uniq!
+      new_array.uniq!
+    end
   end
 
   def self.get_name_of_endpoint_station(endpoint_xml)

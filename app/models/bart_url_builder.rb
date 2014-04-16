@@ -20,6 +20,5 @@ class BartURLBuilder
   def build_stations_api_call
     "http://api.bart.gov/api/stn.aspx?cmd=stns&key=#{@api_key}"
   end
-
 end
 
