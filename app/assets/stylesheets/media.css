@@ -25,6 +25,14 @@
   .section1 h1{
     font-size: 70px;
   }
+
+  .link-homepage{
+     font-size: 20px;
+     width: 200px;
+     margin-left: -45px;
+     left: 0;
+   }
+
 }
 
 @media (max-width: 1500px){
@@ -92,10 +100,11 @@
 
   #link-homepage{
     font-size: 20px;
-    width: 100px;
+    width: 200px;
     margin-left: -45px;
     left: 0;
   }
+
 
   .section{
     margin-right: 10px;
