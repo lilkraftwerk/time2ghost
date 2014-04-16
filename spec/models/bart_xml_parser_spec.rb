@@ -3,7 +3,7 @@ require 'fixtures/fixtures'
 
 describe BartXMLParser do
   context "#get_route_number_from_xml" do
-    it "returns the correct route" do
+    xit "returns the correct route" do
       expect(BartXMLParser.get_route_number_from_xml(ROUTE_XML)).to eq("2")
     end
   end
@@ -15,7 +15,7 @@ describe BartXMLParser do
     end
 
   context "#filter_realtime_departures_by_correct_route" do
-    it "returns realtime departure data" do
+    xit "returns realtime departure data" do
       expect(BartXMLParser.filter_realtime_departures_by_correct_route(REALTIME_XML, "DALY")).to eq(["11", "14", "25"])
     end
   end
