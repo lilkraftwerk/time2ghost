@@ -1,4 +1,4 @@
-git srequire 'spec_helper'
+require 'spec_helper'
 
 describe BartURLBuilder do
     before :each do

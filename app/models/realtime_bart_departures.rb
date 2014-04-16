@@ -1,4 +1,4 @@
- class RealtimeBartDepartures
+class RealtimeBartDepartures
   require 'open-uri'
   attr_accessor :endpoint_and_departure_times
 
@@ -29,9 +29,9 @@
     endpoint_xml_array = get_endpoint_xml_array_from_bart_api
     @endpoints = []
     endpoint_xml_array.each do |current_endpoint_xml|
-     @endpoints <<  BartXMLParser.get_name_of_endpoint_station(current_endpoint_xml)
-   end
-   @endpoints
+      @endpoints <<  BartXMLParser.get_name_of_endpoint_station(current_endpoint_xml)
+    end
+    @endpoints
   end
 
   def get_endpoint_xml_array_from_bart_api
