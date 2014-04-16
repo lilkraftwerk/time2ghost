@@ -1,5 +1,5 @@
-<div class="content">
 
+<div class="container">
   <div id="profile">
       Hello<div class="userinfo"><%= @user.username %></div>
       <%= render "my_trips", :user => @user %><br>
@@ -10,3 +10,4 @@
      <%= link_to "Edit", edit_user_path(@user), :method => "get", :class => "homepage-button", :id => "link" %>
 </div>
 </div>
+

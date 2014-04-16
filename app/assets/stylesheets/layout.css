@@ -12,6 +12,22 @@ html{
 }
 
 .content{
+  background: url('whitediamond_@2X.png');
+  background-size: 100px 100px;
+  position: absolute;
+  display: inline-block;
+  width:100%;
+  padding:20px;
+  background-color: #CCCCCC;
+  top: 20%;
+  left: 0;
+  color: black;
+  font-size: 1.4em;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.container{
   background: url('binding_light_@2X.png');
   background-size: 100px 100px;
   position: absolute;
@@ -19,8 +35,8 @@ html{
   width:50%;
   padding:20px;
   background-color: #CCCCCC;
-  top: 22%;
-  margin-left: 10%;
+  top: 25%;
+  margin-left: 2%;
   width: 75%;
   color: black;
   font-size: 1.4em;
@@ -78,7 +94,7 @@ form input[type=submit]{
   border-radius: 20px;
 }
 
-.content input {
+.container input {
   padding: 10px;
   font-size: 26px;
   margin: 30px 0px;
@@ -86,7 +102,7 @@ form input[type=submit]{
   border: 2px solid black;
 }
 
-.content select {
+.container select {
   height: 300px;
   width: 100%; max-height: 50px;
   border: 0px solid pink;
@@ -95,13 +111,13 @@ form input[type=submit]{
 
 }
 
-.content submit {
+.container submit {
     font-size: 3em;
     border-radius: 10px;
     border: 1px solid black;
 }
 
-.content button {
+.container button {
     height: 150px;
     width: 100%; max-height: 50px;
     border: 0px solid pink;
@@ -153,7 +169,7 @@ form input[type=submit]{
 
 
 #profile .userinfo {
-  background-color: #204987;
+  background-color: #4D6D9F;
   color: white;
   padding: 20px;
   margin-top: 10px;
@@ -194,40 +210,22 @@ form input[type=submit]{
 }
 
 .section{
-  /*background: url('trains.jpg');*/
+  background: url("neverbelate.jpg");
+  background-size: 100%;
   background-color: white;
-  height: 500px;
-  width: 100%;
+  max-width: 100%;
   color: black;
-  height: 100%;
   margin-top: 150px;
   margin-left: -20px;
   margin-right: -20px;
   margin-top: -35px;
-  /*border-radius: 20px;*/
   padding: 35px;
   padding-right: 5px;
-  /*background-color:rgba(0,0,0,0.8);*/
-/*  background: url('binding_light_@2X.png');
-  background-size: 100px 100px;
-  position: absolute;
-  display: inline-block;
-  width:100%;
-  height: 100px;
-  padding:20px;
-  background-color: #CCCCCC;
-  top: 22%;
-  margin-left: 10%;
-  width: 75%;
-  color: black;
-  font-size: 1.4em;
-  text-align: center;
-  border-radius: 20px
-  clear: both;*/
+
 }
 
 .section img {
-    width: 40%;
+    max-width: 100%;
   }
 
 .section h1{
@@ -241,4 +239,42 @@ form input[type=submit]{
   margin-top: -35px;
   border-radius: 20px;
   padding: 50px;
+}
+
+
+.section1{
+  /*background: url('trains.jpg');*/
+  background-color: white;
+  width: 100%;
+  color: black;
+/*  height: 100%;*/
+  margin-top: 150px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -35px;
+  padding: 35px;
+  padding-right: 5px;
+}
+
+.section1 img {
+    max-width: 100%;
+  }
+
+.feature-pic-wait{
+  width: auto;
+  height: auto;
+}
+
+.section2{
+  /*background: url('trains.jpg');*/
+  background-color: black;
+  width: 100%;
+  color: white;
+  height: 100%;
+  margin-top: 150px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -35px;
+  padding: 35px;
+  padding-right: 5px;
 }
