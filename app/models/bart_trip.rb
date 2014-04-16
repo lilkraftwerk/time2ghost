@@ -13,6 +13,14 @@ class BartTrip < ActiveRecord::Base
     self.save!
   end
 
+  def valid?
+
+    return false unless self.current_location != nil
+    return false unless self.departure_station != self.destination_station
+
+    true
+  end
+
   def set_walking_time
     station_coordinates = Station.find_by_abbr(self.departure_station).gmap_destination_string
     self.walking_time = get_walking_time_to_station(current_location, station_coordinates)
