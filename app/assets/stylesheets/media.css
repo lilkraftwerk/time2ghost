@@ -11,6 +11,10 @@
     padding-bottom: 40px;
   }
 
+  .error{
+    margin-left: -40px;
+  }
+
   .link-homepage{
      font-size: 20px;
      width: 200px;
@@ -30,6 +34,8 @@
 
   .login-links p{
     font-size: 80px;
+    margin-left: -65px;
+    margin-top: 50px;
   }
 
   .navbar h1{
@@ -65,10 +71,6 @@
     margin-left: -55px;
   }
 
-  .login-links p{
-    margin-left: -65px;
-    margin-top: 27px;
-  }
 
 }
 
@@ -155,6 +157,12 @@
     padding: 0;
   }
 
+
+  .error{
+    font-size: 18px;
+    margin-left: 8px;
+  }
+
   .login-links{
     margin-left: -20px;
     padding: -30px;
@@ -164,7 +172,18 @@
    font-size: 50px;
    padding-left: -20px;
    left: 0;
+   margin-left: 15px;
   }
+
+  .welcome-buttons {
+    margin-left: 0px;
+  }
+
+  .login-links p{
+    margin-left: 0px;
+    margin-top: 100px;
+  }
+
 
   .navbar h1{
     /*font-size: 60px;*/
@@ -211,6 +230,10 @@
 
   .section2{
     width: 300px;
+  }
+
+  .section2 p{
+    margin-left: -5px;
   }
 
 
