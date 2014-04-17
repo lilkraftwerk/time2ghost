@@ -41,6 +41,12 @@
   margin-top: 40px;
   }
 
+
+  .navbar a h1{
+    font-size: 100px;
+    margin-top: -7px;
+  }
+
   .section{
       height: 1100px;
   }
@@ -147,7 +153,12 @@
   }
 
   .navbar h1{
+    /*font-size: 60px;*/
+  }
+
+  .navbar a h1{
     font-size: 60px;
+    margin-top: 0px;
   }
 
   .section{
