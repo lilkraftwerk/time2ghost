@@ -3,7 +3,7 @@
   img.feature-pic{
     width: 400px;
     height: auto;
-    margin-left: -125px;
+    margin-left: -200px;
   }
 
   .container{
@@ -25,6 +25,7 @@
   .login-links h1{
    color: #2B2E31;
    font-size: 65px;
+   margin-left: -50px;
   }
 
   .login-links p{
@@ -53,8 +54,21 @@
 
   .section1 h1{
     font-size: 100px;
+    margin-left: -60px;
   }
 
+  .section2 p{
+    margin-left: -75px;
+  }
+
+  .welcome-buttons {
+    margin-left: -55px;
+  }
+
+  .login-links p{
+    margin-left: -65px;
+    margin-top: 27px;
+  }
 
 }
 
