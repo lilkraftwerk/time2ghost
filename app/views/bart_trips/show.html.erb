@@ -1,7 +1,7 @@
 <div class="content">
   <div id="show-trip">
     Hi there.<br><br> Your train from <span> <%= @departure_station %></span> to <span> <%= @destination_station %></span>
-    leaves at <span> <%= format_time_and_date(@bart_trip.train_departing_time) %> </span>.<br><br> It's a <span><%= @bart_trip.walking_time %> minute walk</span> from <span> <%= @bart_trip.current_location %></span>.<br><br> You should leave at
+    leaves at <span> <%= format_time_and_date(@bart_trip.train_departing_time)%></span>.<br><br> It's a <span><%= @bart_trip.walking_time %> minute walk</span> from <span> <%= @bart_trip.current_location %></span>.<br><br> You should leave at
     <span> <%= format_time(@bart_trip.recommended_leave_time) %>.</span> <br><br>We'll text you then.
     <br><br><br>
     <3, time2ghost

@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def format_time_and_date(date_time)
-    date_time.strftime("%l:%M %P on %B %d,")
+    date_time.strftime("%l:%M %P on %B %d")
   end
 
 
